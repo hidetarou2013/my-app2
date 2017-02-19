@@ -1,0 +1,26 @@
+
+<label>
+  ナビゲーションテキスト
+</label>
+<br/>
+  <input
+    #searchBox
+    id="search-box"
+    (keyup)="search(searchBox.value)"
+    placeholder="{{nabiplacehold}}"/>
+  <br/>
+<table>
+  <tr class="head">
+    <th>コード</th><th>名称</th>
+  </tr>
+
+  <tr class="detail" *ngFor="let hero of heroes | async">
+    <td >{{hero.id}}</td><td>{{hero.name}}</td>
+  </tr>
+</table>
+<button>決定</button><button>戻る</button>
+<br/>
+<br/>
+-------------------------<br/>
+ナビゲーションコード入力値：{{searchBox.value}}<br/>
+-------------------------<br/>
