@@ -1,7 +1,7 @@
 
-<label>
+<div>
   ナビゲーションテキスト
-</label>
+</div>
 <br/>
   <input
     #searchBox
@@ -11,11 +11,24 @@
   <br/>
 <table>
   <tr class="head">
-    <th>コード</th><th>名称</th>
+    <th>第五コード</th><th>第五名称</th>
+    <th>第四コード</th><th>第四名称</th>
+    <th>第三コード</th><th>第三名称</th>
+    <th>第二コード</th><th>第二名称</th>
+    <th>第一コード</th><th>第一名称</th>
   </tr>
 
   <tr class="detail" *ngFor="let hero of heroes | async">
-    <td >{{hero.id}}</td><td>{{hero.name}}</td>
+    <td><div *ngIf="hero">{{hero.id}}</div></td>
+    <td><div *ngIf="hero">{{hero.name}}</div></td>
+    <td><div *ngIf="hero.hero">{{hero.hero.id}}</div></td>
+    <td><div *ngIf="hero.hero">{{hero.hero.name}}</div></td>
+    <td><div *ngIf="hero.hero.hero">{{hero.hero.hero.id}}</div></td>
+    <td><div *ngIf="hero.hero.hero">{{hero.hero.hero.name}}</div></td>
+    <td><div *ngIf="hero.hero.hero.hero">{{hero.hero.hero.hero.id}}</div></td>
+    <td><div *ngIf="hero.hero.hero.hero">{{hero.hero.hero.hero.name}}</div></td>
+    <td><div *ngIf="hero.hero.hero.hero.hero">{{hero.hero.hero.hero.hero.id}}</div></td>
+    <td><div *ngIf="hero.hero.hero.hero.hero">{{hero.hero.hero.hero.hero.name}}</div></td>
   </tr>
 </table>
 <button>決定</button><button>戻る</button>
